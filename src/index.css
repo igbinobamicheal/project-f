@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Refined Museum Palette (Per Specification) */
+    --color-museum-white: #F7F5F1;
+    --color-warm-ivory: #EFE8DC;
+    --color-soft-champagne: #D8C9AA;
+    --color-muted-gold: #B89A57;
+    --color-deep-gold: #8D7135;
+    --color-charcoal: #1C1C1C;
+    --color-black: #0D0D0D;
+
+    /* Semantic Tokens */
+    --bg-museum: #F7F5F1;
+    --bg-surface: #EFE8DC;
+    --text-primary: #1C1C1C;
+    --text-secondary: #57534E;
+    --text-muted: #8D857B;
+    --accent-gold: #B89A57;
+    --accent-gold-dark: #8D7135;
+    --accent-gold-light: #D8C9AA;
+    --border-gold-subtle: rgba(184, 154, 87, 0.35);
+    --border-light: rgba(28, 28, 28, 0.08);
+  }
+
+  body {
+    background-color: var(--color-museum-white);
+    color: var(--color-charcoal);
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Luxury Editorial & Museum Typography */
+.font-display {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.06em;
+}
+
+.font-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-signage {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono-spec {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Architectural Plaster / Linen Wall Texture */
+.museum-wall-texture {
+  background-color: #F7F5F1;
+  background-image: 
+    radial-gradient(rgba(28, 28, 28, 0.02) 1px, transparent 0),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(239, 232, 220, 0.3));
+  background-size: 24px 24px, 100% 100%;
+}
+
+.museum-wall-ivory {
+  background-color: #EFE8DC;
+  background-image: radial-gradient(rgba(28, 28, 28, 0.025) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.museum-wall-dark {
+  background-color: #0D0D0D;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Exquisite Museum Gold Frame Styles */
+.museum-gold-frame {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(184, 154, 87, 0.45);
+  box-shadow: 
+    0 25px 60px -15px rgba(13, 13, 13, 0.12),
+    0 10px 25px -10px rgba(141, 113, 53, 0.1),
+    0 0 0 1px rgba(184, 154, 87, 0.25) inset;
+}
+
+.museum-gold-frame::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(184, 154, 87, 0.3);
+  pointer-events: none;
+}
+
+/* Dark Gallery Luxury Frame */
+.museum-gold-frame-dark {
+  position: relative;
+  background: #141416;
+  border: 1px solid rgba(184, 154, 87, 0.5);
+  box-shadow: 
+    0 30px 70px -15px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(184, 154, 87, 0.3) inset;
+}
+
+.museum-gold-frame-dark::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 154, 87, 0.35);
+  pointer-events: none;
+}
+
+/* Fine Art Glass Sheen Effect */
+.museum-glass-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.03) 40%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+/* Museum Placard Style (Light & Dark) */
+.museum-placard-light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 87, 0.35);
+  box-shadow: 
+    0 15px 35px -10px rgba(13, 13, 13, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  position: relative;
+}
+
+.museum-placard-light::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #B89A57;
+  box-shadow: 
+    calc(100% - 16px) 0 0 #B89A57,
+    0 calc(100% - 16px) 0 #B89A57,
+    calc(100% - 16px) calc(100% - 16px) 0 #B89A57;
+  opacity: 0.6;
+}
+
+.museum-placard-dark {
+  background: rgba(20, 20, 22, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 154, 87, 0.35);
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  position: relative;
+}
+
+.museum-placard-dark::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #B89A57;
+  box-shadow: 
+    calc(100% - 16px) 0 0 #B89A57,
+    0 calc(100% - 16px) 0 #B89A57,
+    calc(100% - 16px) calc(100% - 16px) 0 #B89A57;
+  opacity: 0.6;
+}
+
+/* Gallery Lighting Spotlights */
+.gallery-spotlight-light {
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(216, 201, 170, 0.35) 0%,
+    rgba(216, 201, 170, 0.08) 50%,
+    transparent 75%
+  );
+}
+
+.gallery-spotlight-dark {
+  background: radial-gradient(
+    circle at 50% 25%,
+    rgba(184, 154, 87, 0.18) 0%,
+    rgba(184, 154, 87, 0.04) 50%,
+    transparent 75%
+  );
+}
+
+.gallery-pinpoint-gold {
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(184, 154, 87, 0.28) 0%,
+    rgba(184, 154, 87, 0.06) 45%,
+    transparent 70%
+  );
+}
+
+/* Fine Gold Outline & Accents */
+.border-gold-fine {
+  border: 1px solid rgba(184, 154, 87, 0.35);
+}
+
+.border-gold-hover:hover {
+  border-color: rgba(184, 154, 87, 0.8);
+}
+
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 154, 87, 0.4), transparent);
+}
+
+/* Archival Photo Corner Accents */
+.photo-corners {
+  position: relative;
+}
+
+.photo-corners::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #B89A57;
+  border-left: 2px solid #B89A57;
+  pointer-events: none;
+}
+
+.photo-corners::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-bottom: 2px solid #B89A57;
+  border-right: 2px solid #B89A57;
+  pointer-events: none;
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F5F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8C9AA;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B89A57;
+}
+
+/* Print Styles for Monograph & Exhibition Catalog */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm;
+  }
+
+  body {
+    background: #FAF8F5 !important;
+    color: #1C1C1C !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  header, nav, .no-print, button, .custom-cursor-active {
+    display: none !important;
+  }
+
+  .catalog-modal-container {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .catalog-page-break {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+
+  .catalog-plate-frame {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+}
